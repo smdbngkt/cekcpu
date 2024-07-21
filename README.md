@@ -4,7 +4,7 @@ Script untuk memeriksa detail CPU, RAM, storage, dan detail lainnya di VPS Ubunt
 
 ## Cara Penggunaan
 
-Download script `cek.sh` dengan perintah berikut:
+1. Download script `cek.sh`, berikan izin eksekusi, dan jalankan dengan perintah berikut:
     ```bash
     curl -O https://raw.githubusercontent.com/smdbngkt/cekcpu/main/cek.sh && chmod +x cek.sh && ./cek.sh
     ```
@@ -15,9 +15,12 @@ Script ini akan menampilkan informasi detail tentang CPU, RAM, storage, dan info
 
 Script ini akan menampilkan informasi berikut:
 - Detail CPU
+- Persentase Penggunaan CPU
 - Detail RAM
+- Persentase Penggunaan RAM
 - Detail Storage
 - Penggunaan Disk
+- Persentase Penggunaan Disk
 - Interface Jaringan
 - Detail Sistem Operasi
 - Versi Kernel
