@@ -5,9 +5,19 @@ echo "CPU Details:"
 lscpu
 echo ""
 
+# Check CPU usage percentage
+echo "CPU Usage Percentage:"
+mpstat | awk '$3 ~ /[0-9.]+/ { print 100 - $13"%"}'
+echo ""
+
 # Check RAM details
 echo "RAM Details:"
 free -h
+echo ""
+
+# Check RAM usage percentage
+echo "RAM Usage Percentage:"
+free | awk '/Mem/ {printf("%.2f%"), $3/$2 * 100.0}'
 echo ""
 
 # Check Storage details
@@ -18,6 +28,11 @@ echo ""
 # Check Disk usage
 echo "Disk Usage:"
 du -sh /*
+echo ""
+
+# Check Disk usage percentage
+echo "Disk Usage Percentage:"
+df -h | grep -E '^/dev/' | awk '{ print $1 " : " $5 }'
 echo ""
 
 # Check Network Interfaces
